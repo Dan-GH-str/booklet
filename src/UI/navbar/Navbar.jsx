@@ -6,7 +6,7 @@ import { useEffect, useState, useContext } from "react";
 import { AppContext } from "../../context/index.js";
 
 const Navbar = () => {
-    const [width, setWidth] = useState(window.innerWidth)
+    const [ width ]  = useState(window.innerWidth)
     const route = useNavigate()
     const { pathname } = useContext(AppContext)
 
