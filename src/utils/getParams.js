@@ -1,0 +1,1 @@
+export const getParams = () => window.location.search

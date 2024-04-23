@@ -1,0 +1,27 @@
+.footer {
+    height: 10%;
+    width: 100%;
+    background-color: rgb(95, 95, 95);
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.footer__copyright {
+    font-family: "Montserrat", serif;
+    font-size: 14px;    
+    color: white;
+    margin-bottom: 1.4rem;
+}
+
+@media (max-width: 1200px) {
+    .footer {
+        height: 12%;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer__copyright {
+        font-size: 13px;
+    }
+}

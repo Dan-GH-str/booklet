@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useLocation, useNavigate } from "react-router-dom";
+import AppRouter from "./components/AppRouter";
+import Navbar from "./UI/navbar/Navbar.jsx";
+import "./App.css"
+import Footer from "./UI/footer/Footer.jsx";
+import { useEffect } from "react";
+import { AppContext } from "./context/index.js";
 
 function App() {
+  const { search, pathname } = useLocation()
+  const route = useNavigate()
+  
+  useEffect(() => {
+    if (search !== '?lang=ru' && search !== '?lang=en') route('/main?lang=ru')
+  }, [search, route])
+
+  const lang = search.substring(6, 8).toUpperCase()
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <BrowserRouter>
+
+    <AppContext.Provider value={{lang, pathname}}>
+      <Navbar />
+      <AppRouter />      
+      <Footer />
+    </AppContext.Provider>
+
+    // </BrowserRouter>
   );
 }
 
