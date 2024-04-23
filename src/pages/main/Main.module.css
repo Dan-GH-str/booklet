@@ -6,7 +6,7 @@
 
 .main-top {
     height: 100vh;
-    background-image: url(../../img/mainTop.jpg);
+    background-image: url(../../img/mainTopCompressed.jpg);
     background-position: center;
     background-size: cover;
     display: flex;
