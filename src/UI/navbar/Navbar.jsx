@@ -61,7 +61,7 @@ const Navbar = () => {
                         <button className="navbar__link navbar__link-main navbar__link_active" data-url={`/main${getParams()}`}>{dict["NAV-MAIN"]}</button>
                     </li>
                     <li className="navbar__item">
-                        <button className="navbar__link" data-url={`/restaurants${getParams()}`}>{dict["NAV-REASTAURANTS"]}</button>
+                        <button className="navbar__link" data-url={`/restaurants${getParams()}`}>{dict["NAV-RESTAURANTS"]}</button>
                     </li>
                     <li className="navbar__item">
                         <button className="navbar__link" data-url={`/map${getParams()}`}>{dict["NAV-MAP"]}</button>
@@ -69,9 +69,9 @@ const Navbar = () => {
                 </ul>
 
                 <ul className="navbar__lang-switcher">
-                    <li className="navbar__item"><Link className="navbar__lang-link" to={`${pathname}?lang=ru`}>RU</Link></li>
+                    <li className="navbar__item"><Link className="navbar__lang-link" onClick={() => cachedMyRoute(`${pathname}?lang=ru`)}>RU</Link></li>
                     <li className="navbar__item"><span className="navbar__lang-switcher-separator"></span></li>
-                    <li className="navbar__item"><Link className="navbar__lang-link" to={`${pathname}?lang=en`}>EN</Link></li>
+                    <li className="navbar__item"><Link className="navbar__lang-link" onClick={() => cachedMyRoute(`${pathname}?lang=en`)}>EN</Link></li>
                 </ul>
                 
                 <a href="#navbar" className="navbar__toggle" role="button" aria-expanded="false" aria-controls="menu">
