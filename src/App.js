@@ -3,7 +3,7 @@ import AppRouter from "./components/AppRouter";
 import Navbar from "./UI/navbar/Navbar.jsx";
 import "./App.css"
 import Footer from "./UI/footer/Footer.jsx";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { AppContext } from "./context/index.js";
 
 function App() {
