@@ -1,6 +1,6 @@
 import cl from "./Main.module.css"
 import clNav from "../../UI/navbar/Navbar.module.css"
-import { useEffect, useRef, useContext } from "react"
+import { useRef, useContext, useState, useEffect } from "react"
 import { AppContext } from "../../context/index.js"
 
 function toMenu() {
@@ -16,48 +16,42 @@ function toMenu() {
 
 const Main = () => {
     const { lang } = useContext(AppContext)
-
-    const dishesList = useRef(0)
-
-    import(`./dishes/dishes${lang}.js`)
-        .then(obj => {
-            obj.dishes.map((dishe, i) => dishesList.current.insertAdjacentHTML("beforeend", obj.disheTemplate(dishe, i, cl)))
-    })
+    const [ dict, setDict ] = useState({})
 
     useEffect(() => {
-        require("./Main.js")
-    }, [])
+        import(`./dict/dict${lang}.js`)
+            .then(obj => {
+                setDict(obj.default)
+            }
+        )
+
+        import(`./dishes/dishes${lang}.js`)
+            .then(obj => {
+                obj.dishes.map((dishe, i) => dishesList.current.insertAdjacentHTML("beforeend", obj.disheTemplate(dishe, i, cl)))
+            }
+        )
+    }, [lang])
+    
+    const dishesList = useRef(0)
     
 
     return (
         <main className={cl["main"]}>
             <section className={cl["main-top"]}>
                 <div className={cl["main-top-content"]}>
-                    <h1 className={cl["main-top-content__title"]}>Гастрономический туризм</h1>
-                    <p className={cl["main-top-content__paragraph"]}>Традиционные новгородские блюда</p>
-                    <button className={cl["main-top-content__menuBtn"]} onClick={toMenu}>МЕНЮ</button>
+                    <h1 className={cl["main-top-content__title"]}>{dict["MAIN-TOP-TITLE"]}</h1>
+                    <p className={cl["main-top-content__paragraph"]}>{dict["MAIN-TOP-PARAGRAPH"]}</p>
+                    <button className={cl["main-top-content__menuBtn"]} onClick={toMenu}>{dict["MAIN-TOP-BTN"]}</button>
                 </div>
             </section>
 
             <section className={cl["main-bottom"]}>
                 <div className={cl["main-bottom-header"]}>
-                    <h1 className={cl["main-bottom-header__title"]}>Приятного аппетита и ярких впечатлений!</h1>
-                    <p className={cl["main-bottom-header__paragraph"]}>Гастрономический аспект - важная часть любого путешествия. Предлагаем вам ознакомиться с популярными деликатесами традиционной новгородской кухни и узнать, где их можно попробовать!</p>
+                    <h1 className={cl["main-bottom-header__title"]}>{dict["MAIN-BOTTOM-TITLE"]}</h1>
+                    <p className={cl["main-bottom-header__paragraph"]}>{dict["MAIN-BOTTOM-PARAGRAPH"]}</p>
                 </div>
 
-                <div className={cl["main-bottom-dishes-list"]} ref={dishesList}>
-                    {/* <article className="dishe-block">
-                        <img src={img} alt="" className="dishe-block__img" />
-                        <div className="dishe-block__main">
-                            <div className="dishe-block__title"></div>
-                            <div className="dishe-block__description"></div>
-                            <div className="dishe-block__address">
-                                <img src="" alt="" className="address-placemark" />
-                                <p className="dishe-block__address-p"></p>
-                            </div>
-                        </div>
-                    </article> */}
-                </div>
+                <div className={cl["main-bottom-dishes-list"]} ref={dishesList}></div>
             </section>
         </main>
     )
