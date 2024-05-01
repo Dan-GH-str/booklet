@@ -7,13 +7,19 @@
     box-sizing: border-box;
     z-index: 1;
     backdrop-filter: blur(5px);
-    border-bottom: 1px solid #d3d3d3;
-
+    /* border-bottom: 1px solid #d3d3d3; */
+    background-color: rgb(162 162 162 / 50%);
+    border-bottom: 2px solid #bababa;
 }
-/* #bbab8a */
+
+.header-main {
+    background-color: transparent;
+}
+
+/* 
 .header_ommited {
     background: linear-gradient(to right, rgb(95, 133, 133), 60%, #69a3a3);
-}
+} */
 
 .navbar {
     width: 100%;

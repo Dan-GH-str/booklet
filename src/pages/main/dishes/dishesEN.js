@@ -1,11 +1,5 @@
 import * as Img from "../../../img/img.js"
-
-const addr = {
-    NKB: "Gastrobar «Naffiga koza bayan?!», 3, Velikaya St.",
-    Berga: "Restaurant «Berg's House», 24 Bolshaya Moskovskaya St.",
-    Charodeyka: "Restaurant «Charodeika», Chudintseva St., 1/1",
-    Marusya: "Restaurant «Marusya», 24, Predtechenskaya St.",
-}
+import addr from "../../../content/addresses/addressesEN.js"
 
 export const dishes = [
     {src: `${Img.bearMeat}`, title: "Bear meat", description: "The classic of Novgorod cuisine is the meat of wild animals. The restaurant «Berg's House», located in a house built in 1868, which used to belong to an old merchant family, offers its guests to taste bear meat marinated in juniper berries and honey and stewed in the oven.", address: `${addr.Berga}`},

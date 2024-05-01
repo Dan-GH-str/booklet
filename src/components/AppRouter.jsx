@@ -7,7 +7,6 @@ const AppRouter = ({lang}) => {
             {routes.map((route, i) => 
                 <Route
                     key={i}
-                    exact
                     path={route.path}
                     element={<route.component/>}
                 />

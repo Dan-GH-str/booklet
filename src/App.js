@@ -11,13 +11,11 @@ function App() {
   const route = useNavigate()
   console.log("APP");
 
-  const langValue = search.substring(6, 8).toUpperCase()
+  const lang = search.substring(6, 8).toUpperCase()
   
   useEffect(() => {
     if (search !== '?lang=ru' && search !== '?lang=en') route('/main?lang=ru')
   }, [search, route])
-
-  const lang = langValue
 
   return (
     // <BrowserRouter>
