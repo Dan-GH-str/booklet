@@ -85,7 +85,7 @@ const Navbar = () => {
                     <li className="navbar__item"><Link className="navbar__lang-link" onClick={() => cachedMyRoute(`${pathname}?lang=en`)}>EN</Link></li>
                 </ul>
                 
-                <a className={`navbar__toggle ${pathname === "/main" && "navbar__toggle-main"}`} role="button" aria-expanded="false" aria-controls="menu">
+                <a className={`navbar__toggle ${pathname === "/main" && "navbar__toggle-main"}`} href="#navbar" role="button" aria-expanded="false" aria-controls="menu">
                     <svg className="menuicon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
                     <title>Toggle Menu</title>
                     <g>

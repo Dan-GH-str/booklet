@@ -53,7 +53,7 @@ const Restaurants = () => {
                     <h1 className={cl["content__header"]}>{currentRest.name}</h1>
                     <div className={cl["content__main"]}>
                         <div className={cl["map"]}>
-                            <a href={`${currentRest.href}`} target="_blank"><img className={cl["map__img"]} src={`${currentRest.src}`} alt=""/></a>
+                            <a href={`${currentRest.href}`} rel="noreferrer" target="_blank"><img className={cl["map__img"]} src={`${currentRest.src}`} alt=""/></a>
                         </div>
                         {currentRest.content.map( ({ id, title, description }) => (
                             <article className={cl["dishe"]} key={id}>
