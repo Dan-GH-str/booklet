@@ -32,7 +32,7 @@ const Main = () => {
                 obj.dishes.map((dishe, i) => dishesList.current.insertAdjacentHTML("beforeend", obj.disheTemplate(dishe, i, cl)))
             }
         )
-    }, [dict])
+    }, [dict, lang])
     
 
     return (
