@@ -21,7 +21,7 @@ const Restaurants = () => {
     return (
         <main className={cl["main"]}>
             <input type="checkbox" id={cl["nav-toggleID"]} hidden></input>
-            {restaurants.length && (
+            {(restaurants.length && (
                 <>
                     <div className={cl["nav"]}>
                         <label htmlFor={cl["nav-toggleID"]} className={cl["nav-toggle"]}><i className="gg-chevron-right"></i></label>
@@ -70,7 +70,7 @@ const Restaurants = () => {
             
                 
             </>
-            )}
+            )) || ""}
         </main>
     )
 }

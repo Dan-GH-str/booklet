@@ -35,8 +35,8 @@ const Navbar = () => {
     
     
     useEffect(() => {
-        createMobileNavbar()
-    }, [width])
+        createMobileNavbar(pathname)
+    }, [width, pathname])
 
     if (width > 768) {
         return (

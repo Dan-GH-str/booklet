@@ -37,7 +37,7 @@ const Main = () => {
 
     return (
         <main className={cl["main"]}>
-            {Object.keys(dict).length &&
+            {(Object.keys(dict).length && (
             <>
                 <section className={cl["main-top"]}>
                     <div className={cl["main-top-content"]}>
@@ -55,7 +55,7 @@ const Main = () => {
 
                     <div className={cl["main-bottom-dishes-list"]} ref={dishesList}></div>
                 </section>
-            </>}
+            </>)) || ""}
         </main>
     )
 }

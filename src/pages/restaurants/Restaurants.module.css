@@ -2,6 +2,7 @@
 
 .main {
     min-height: 100%;
+    position: relative;
     box-sizing: border-box;
     padding: 11% 2rem 1rem 5rem;
     font-family: "Montserrat", sans-serif;
@@ -46,10 +47,15 @@
     cursor: pointer;
     font-size: 1.2em;
     line-height: 1;
-    z-index: 2001;
+    z-index: 1;
     -webkit-transition: color .25s ease-in-out;
     -moz-transition: color .25s ease-in-out;
     transition: color .25s ease-in-out;
+    transition: left .9s ease-in-out;
+}
+
+.nav-toggle_hidden {
+    left: -100%;
 }
 
 .nav-toggle:after {
@@ -476,6 +482,11 @@
         padding: 2rem 0.5rem 1rem 0.5rem;
     }
 
+    .nav {
+        width: 85%;
+        left: -85%;
+    }
+
     .nav-toggle {
         top: 15%;
         padding: 0.2rem 0.2rem 0.2rem 0rem;
@@ -483,6 +494,14 @@
 
     .content__header {
         font-size: 1.3rem;
+    }
+
+    .content__main {
+        margin-right: 0;
+    }
+
+    .dishe {
+        width: 90%;
     }
 
     .dishe__title {
