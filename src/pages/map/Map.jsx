@@ -42,7 +42,8 @@ const Map = () => {
                     <iframe 
                         className={cl["map__iframe"]}
                         src="https://yandex.ru/map-widget/v1/?um=constructor%3A13c8398cec4f817b6d084e6f0dbed79f5dfa1d607c9ae60699d159f7db4f4c6f&amp;source=constructor" 
-                        frameBorder="0">
+                        frameBorder="0"
+                        title="Map of Restaurants">
                     </iframe>
                 </div>
                 
