@@ -1,5 +1,5 @@
 import addr from "../../../content/addresses/addressesRU"
-import { soups, main, hot, salads, desserts } from "./categories/categoriesRU.js"
+import { soups, main, hot, salads, desserts, drinks } from "./categories/categoriesRU.js"
 
 const restaurants = [
     {
@@ -28,6 +28,13 @@ const restaurants = [
 
             [desserts]: [
                 { id: 8, title: "Новгородская вафля", description: "Новгородская вафля подаётся с кисло-сладкими мандаринами и шоколадным мороженым." },
+            ],
+
+            [drinks]: [
+                { id: 12, title: "Княгиня Ольга", description: "Бехеровка, ванильный сироп, лимонный фреш, пюре малины." },
+                { id: 9, title: "Медовуха тёмная", description: "" },
+                { id: 10, title: "Иван Царевич эль", description: "" },
+                { id: 11, title: "Кикимора молочный стаут", description: "" },
             ]
         }
     },
@@ -64,6 +71,11 @@ const restaurants = [
                 { id: 3, title: "Котлеты из щуки и картофеля", description: "" },
                 { id: 4, title: "Ильменьский паровой судак с овощами", description: "" },
                 { id: 5, title: "Телячьи щечки с перловой кашей и аджикой из свеклы", description: "" }
+            ],
+
+            [drinks]: [
+                { id: 7, title: "Сбитень", description: "Старинный русский горячий напиток, сваренный из мёда, пряностей и трав." },
+                { id: 6, title: "Медовуха", description: "" }
             ]
         }
     },
@@ -88,8 +100,12 @@ const restaurants = [
 
             [desserts]: [
                 { id: 0, title: "Пряник «Заводской»", description: "с начинкой из сухофруктов на Спотыкаче" }
-            ]
+            ],
 
+            [drinks]: [
+                { id: 4, title: "Морошка", description: "Морошка не похожа ни на какую другую ягоду, так как природа наделила её балансом из сладкого, кислого и горького оттенков вкуса.ыражаясь языком профессионалов, это настойка с пониженным содержанием алкоголя (low ABV), а коктейль из ингредиентов в её составе даёт ощущение мёда и сот в послевкусии." },
+                { id: 5, title: "Хреновуха", description: "Первосортный ароматный хрен, шесть видов пикантных перцев, чеснок, натуральный мёд и длительноу настаивание." }
+            ]
         }
     },
     {
@@ -111,7 +127,13 @@ const restaurants = [
 
             [hot]: [
                 { id: 3, title: "Румаки", description: "" },
-                { id: 5, title: "Сульчины", description: "Блины с творогом" }
+                { id: 5, title: "Сульчины", description: "Блины с творогом." }
+            ],
+
+            [drinks]: [
+                { id: 6, title: "Водка Спасская", description: "" },
+                { id: 7, title: "Водка Садко", description: "" },
+                { id: 8, title: "Спотыкач", description: "" }
             ]
         }
     },
