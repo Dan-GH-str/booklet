@@ -55,13 +55,29 @@ const Restaurants = () => {
                         <div className={cl["map"]}>
                             <a href={`${currentRest.href}`} rel="noreferrer" target="_blank"><img className={cl["map__img"]} src={`${currentRest.src}`} alt=""/></a>
                         </div>
-                        {currentRest.content.map( ({ id, title, description }) => (
-                            <article className={cl["dishe"]} key={id}>
+
+                        <div className="dishes">
+                            {Object.keys(currentRest.content).map((category) => {
+                                return (
+                                    <>
+                                        <h1 className={cl["dishes__category"]} key={currentRest.id}>{category}</h1>
+                                        {currentRest.content[`${category}`].map( ({ id, title, description }) => (
+                                            <article className={cl["dishe"]} key={id}>
+                                                <h1 className={cl["dishe__title"]}>{title}</h1>
+                                                <p className={cl["dishe__description"]}>{description}</p>
+                                            </article>))
+                                        }
+                                    </>
+                                )
+                            })}
+                        </div>
+                        {/* // .content.map( ({ id, title, description }) => (
+                             <article className={cl["dishe"]} key={id}>
                                 <h1 className={cl["dishe__title"]}>{title}</h1>
-                                <p className={cl["dishe__description"]}>{description}</p>
+                                 <p className={cl["dishe__description"]}>{description}</p>
                             </article>
-                        ))
-                        }
+                        // )) */}
+                        
 
                         <hr className={cl["content__separator"]}/>
                     </div>
