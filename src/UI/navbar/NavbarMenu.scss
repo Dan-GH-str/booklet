@@ -21,10 +21,11 @@
 }
 
 .navbar {
-  height: 100vh;
+  height: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: height .3s ease-in;
   
   // Toggle Button
   &__toggle {
@@ -230,6 +231,7 @@
 
 .navbar:target,
 .navbar--open {
+  height: 100vh;
   
   //scale the background circle to full size
   > .splash::after {
